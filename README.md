@@ -53,9 +53,9 @@ If you use udisks2, you can use udisksctl to perform the same steps:
 The only real advantage to using udisks2 is if you are using a GUI wrapper like udiskie, wherein you can choose a loop device to attach from a menu. If it was attached as a superuser, it the wrapper will not be able to detach it. Using the 'loop-setup' command with udisks2 allows it to do the detaching as well. However, udisks2's underlying filesystem detection system seems to be a bit strict and the majority of internet-sourced PC98 disks that have been tested will not mount with udisks2, though they work fine with standard mount. Therefore, I recommend sticking with the native tools (losetup/mount).
 
 ## Mounting Floppy Disks
-There are a plethora of floppy formats for the various PC98 emulators. The simplest formats are simply raw sector dumps or raw dumps with a header. As far as I can tell from my research, FDI is the only floppy format with a simple header. (D88 uses headers for each sector and FDD (Virtual98) seems to do something similar.) This limits which options we can work with directly, but there are tools which can convert these formats which can be run through Wine. It's not great, and a project for someday in the future would be to write Linux friendly converters or maybe even FUSE drivers...
+There are a plethora of floppy formats for the various PC98 emulators. The simplest formats are simply raw sector dumps or raw dumps with a header. As far as I can tell from my research, FDI is the only floppy format with a simple header. (D88 uses headers for each sector and FDD (Virtual98) seems to do something similar.) This limits which options we can work with directly, yjpoihj there are Windows tools which can convert these formats. It's not great, and a project for someday in the future would be to write Linux friendly converters or maybe even FUSE drivers...
 
-But for raw and FDI formatted images, we can work with them easily enough. Raw images can be access using the examples above:
+But for raw and FDI formatted images, we can work with them easily enough. Raw images can be accessed using the examples above:
 
     > sudo losetup --show -fL disk.img
     /dev/loop0
